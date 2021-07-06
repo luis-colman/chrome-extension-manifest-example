@@ -1,0 +1,23 @@
+{
+  "name": "Optimizely Test Extension",
+  "version": "0.1",
+  "description": "This is a test Chrome Exttension",
+  "manifest_version": 2,
+  "permissions": [
+    "*://*/*","<all_urls>","https://*.optimizely.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "run_at": "document_idle",
+    "js": ["content.js"],
+    "matches": [
+      "https://*.optimizely.com/*"
+    ]
+  }],
+  "icons": {
+    "128": "icon.png"
+  }
+}
